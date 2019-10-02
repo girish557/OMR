@@ -12,9 +12,12 @@ import cv2
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
-	help="path to the input image")
+                help="path to the input image")
 args = vars(ap.parse_args())
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 # define the answer key which maps the question number
 # to the correct answer
