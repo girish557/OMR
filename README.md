@@ -17,3 +17,18 @@ Install the required libraries using the following command:
 
 Execute the script using the following command:
 `python optical-mark-recognition/test_grader.py -i optical-mark-recognition/images/test_01.png`
+
+#### Extending the OMR and test scanner
+In the current implementation, we (naively) assume that a reader has filled in one and only one bubble per question row.
+
+What happens if a user does not bubble in an answer for a particular question?
+What if the user is nefarious and marks multiple bubbles as “correct” in the same row?
+Luckily, detecting and handling of these issues isn’t terribly challenging, we just need to insert a bit of logic.
+
+For issue #1, if a reader chooses not to bubble in an answer for a particular row, then we can place a minimum threshold.
+
+If this value is sufficiently large, then we can mark the bubble as “filled in”. Conversely, if total  is too small, then we can skip that particular bubble. If at the end of the row there are no bubbles with sufficiently large threshold counts, we can mark the question as “skipped” by the test taker.
+
+A similar set of steps can be applied to issue #2, where a user marks multiple bubbles as correct for a single question:
+
+Again, all we need to do is apply our thresholding and count step, this time keeping track if there are multiple bubbles that have a total  that exceeds some pre-defined value. If so, we can invalidate the question and mark the question as incorrect.
