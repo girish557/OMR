@@ -1,3 +1,10 @@
+### Implementation by Dr Adrian Rosebrock: Bubble sheet multiple choice scanner and test grader using OMR, Python and OpenCV
+  
+Find details in the link below
+
+https://www.pyimagesearch.com/2016/10/03/bubble-sheet-multiple-choice-scanner-and-test-grader-using-omr-python-and-opencv/
+
+
 What is Optical Mark Recognition (OMR)?
 
 Optical Mark Recognition, or OMR for short, is the process of automatically analyzing human-marked documents and interpreting their results.
