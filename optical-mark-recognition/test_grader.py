@@ -14,10 +14,6 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
                 help="path to the input image")
 args = vars(ap.parse_args())
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 # define the answer key which maps the question number
 # to the correct answer
@@ -25,6 +21,7 @@ ANSWER_KEY = {0: 1, 1: 4, 2: 0, 3: 3, 4: 1}
 
 # load the image, convert it to grayscale, blur it
 # slightly, then find edges
+
 image = cv2.imread(args["image"])
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (5, 5), 0)
@@ -139,5 +136,4 @@ cv2.putText(paper, "{:.2f}%".format(score), (10, 30),
             cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
 cv2.imshow("Original", image)
 cv2.imshow("Exam", paper)
-cv2.imwrite('exam.jpg', paper)
 cv2.waitKey(0)
